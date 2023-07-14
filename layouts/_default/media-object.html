@@ -1,0 +1,12 @@
+<section id='{{ partial "get-block-slug" . }}' class='{{ with .Params.class_list }} {{ . }}{{ end }}'>
+	<figure>
+		{{ partial "picture-media-object" (partial "get-first-image" .) }}
+		<img loading="lazy" class="racing" src="{{ (partial "get-site-image" "race-tracks.svg" ).Permalink }}">
+	</figure>
+
+	{{ with .Content }}
+		<div class='content'>
+			{{- . -}}
+		</div>
+	{{ end }}
+</section>

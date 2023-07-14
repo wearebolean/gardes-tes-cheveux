@@ -1,0 +1,4 @@
+<p class='{{ if .class }}{{ .class }}{{ end }}'>
+	<label for='field_{{ .name }}'>{{ .label }}</label>
+	<textarea id='field_{{ .name }}' name='{{ .name }}' rows='6' {{ if .required }}required{{ end }}></textarea>
+</p>

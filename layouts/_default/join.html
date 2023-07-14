@@ -1,0 +1,14 @@
+<section id='{{ partial "get-block-slug" . }}' class='{{ with .Params.class_list }} {{ . }}{{ end }}'>
+	<figure>
+    {{ $image := resources.Match (print "images/" .Params.image_url) }}
+    {{ $image := (index $image 0).Resize "x1300 q80 webp" }}
+    <img loading="lazy" src="{{ $image.Permalink }}" alt="">
+		<img loading="lazy" class="racing" src="{{ (partial "get-site-image" "race-tracks.svg" ).Permalink }}">
+	</figure>
+
+	{{ with .Content }}
+		<div class='content'>
+			{{- . -}}
+		</div>
+	{{ end }}
+</section>

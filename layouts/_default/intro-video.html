@@ -1,0 +1,25 @@
+{{ $images := slice }}
+{{ with .Resources.ByType "image" }}
+    {{ range . }}
+        {{ $images = $images | append . }}
+    {{ end }}
+{{ end }}
+
+{{ $videos := .Resources.ByType "video" }}
+{{ $video := (index $videos 0) }}
+
+<section id='{{ partial "get-block-slug" . }}'
+    class='background-section{{ with .Params.class_list }} {{ . }}{{ end }}'
+    style="background-image: url({{ ((index $images 0).Resize "2560x q80 webp").Permalink }});"
+>
+	<div class='content'>
+		{{ .Content }}
+	</div>
+
+    {{ if eq (len $videos) 1 }}
+        <figure>
+            <video src="{{ $video.Permalink }}" poster="{{ ((index $images 1).Resize "1500x q80 webp").Permalink }}" playsinline autoplay loop muted>
+            </video>
+        </figure>
+    {{ end }}
+</section>

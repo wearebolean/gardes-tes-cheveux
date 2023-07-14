@@ -1,0 +1,49 @@
+# Form
+
+[contact_full_name]
+other = "Nom complet"
+
+[contact_company]
+other = "Compagnie"
+
+[contact_phone]
+other = "Téléphone"
+
+[contact_email]
+other = "Courriel"
+
+[contact_address]
+other = "Adresse"
+
+[contact_city]
+other = "Ville"
+
+[contact_postal_code]
+other = "Code Postal"
+
+[contact_comments]
+other = "Commentaires"
+
+[contact_request_sent]
+other = "Merci, votre message à bien été envoyé."
+
+[contact_request_failed]
+other = "Une erreur s'est produite, impossible d'envoyer votre message. S'il vous plaît réessayer."
+
+
+# Footer
+
+[contact_info]
+other = "Coordonnées"
+
+[all_rights_reserved]
+other = "tous droits réservés."
+
+[avis-legal]
+other = "Avis Legal"
+
+[made_by]
+other = "Fait par "
+
+[a_divison_of]
+other = "une division de "

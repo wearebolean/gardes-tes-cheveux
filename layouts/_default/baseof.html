@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "fr" }}">
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','{{ .Site.Params.gtm }}');
+        </script>
+        <title>
+            {{ if or .IsHome .Params.title_prefix }}
+                {{ if .Params.title_prefix}} {{ .Params.title_prefix}}&nbsp;{{ end }}{{ .Site.Title }} | {{ .Title }}
+            {{ else }}
+                {{ .Title }} | {{ .Site.Title }}
+            {{ end }}
+        </title>
+
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {{ if .Description }}
+            <meta name='description' content='{{ .Description }}'>
+        {{ end }}
+
+        {{- if ne .Title "" }}
+        <meta property="og:title" content="{{ .Title }} | {{ $.Site.Params.title }}">
+        {{- end }}
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ .Permalink }}">
+        <meta property="og:site_name" content="{{ .Site.Title }}">
+
+        {{- if eq site.LanguageCode "fr" }}
+            <meta property="og:locale" content="fr_CA">
+        {{ else }}
+            <meta property="og:locale" content="en_CA">
+        {{- end }}
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <!-- https://favicon.io/favicon-converter/ -->
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <meta property="og:image" content="{{ .Site.BaseURL }}images/share-image.jpg">
+        <meta property="og:image:secure_url" content="{{ .Site.BaseURL }}images/share-image.jpg"> <!-- ideal size : 1200x630 -->
+
+        <link rel="stylesheet" href="https://use.typekit.net/otj6yms.css">
+        <script src="https://kit.fontawesome.com/410f2f52c5.js" crossorigin="anonymous"></script> <!-- Remove this comment when updated -->
+
+        {{- partial "stylesheet-link" "reset" -}}
+        {{- partial "stylesheet-link" "animations" -}}
+        {{- partial "stylesheet-link" "main" -}}
+        {{ partial "stylesheet-link-for-current-page" . }}
+
+        {{- block "head_end" . -}}
+        {{ end }}
+    </head>
+
+    {{ $currentPage := . }}
+    <body class="{{ if .IsHome }}home{{ else }}{{ .Section }}{{ end }}{{ if .IsPage }}page{{ end }}">
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtm }}"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <header {{ if .Params.transparent_header }}class="transparent_header"{{ end }}>
+            <a class='brand' href="{{ $.Site.Home.Permalink }}">
+                {{ if .Params.alt_logo }}
+                    <img loading="lazy" src="{{ (partial "get-site-image" "logo-alt.svg" ).Permalink }}" alt="Logo"> <!-- Remove this comment when updated -->
+                {{ else }}
+                    <img loading="lazy" src="{{ (partial "get-site-image" "logo.svg" ).Permalink }}" alt="Logo"> <!-- Remove this comment when updated -->
+                {{ end }}
+            </a>
+
+            <nav>
+                <section class="-dropdown js-collapsible">
+                    {{- range .Site.Menus.dropdown -}}
+                        <a href='{{ .URL | absLangURL }}' onclick="toggleCollapsibleNav(event);">
+                            {{ .Name }} {{ partial "images/angle-down" }}
+                        </a>
+                    {{- end -}}
+                    <div class="dropdown-content">
+                        {{- range .Site.Menus.dropdown_list -}}
+                            <a href='{{ .URL | absLangURL }}' class="{{ if (eq $currentPage.Permalink (.URL | absLangURL)) }}active-link {{ end }}">
+                                {{ .Name }}
+                            </a>
+                        {{- end -}}
+                        </div>
+                </section>
+                {{- range .Site.Menus.main_menu -}}
+                    <a
+                        class="{{ if (eq $currentPage.Permalink (.URL | absLangURL)) }}active-link {{ end }}{{.Identifier}}"
+                        href="{{ .URL | absLangURL }}">
+                        {{.Name}}
+                    </a>
+                {{- end -}}
+                {{ range .Translations }}
+                    <a class='lang' href='{{ .Permalink }}'>{{ .Lang }}</a>
+                {{ end }}
+            </nav>
+
+            <div class="burger-menu" onclick="toggleBurgerMenu(this);">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <main>
+            {{- block "main" . }}
+                {{ .Content }}
+            {{- end }}
+        </main>
+        <footer>
+            <a href="/" class="brand">
+                <img loading="lazy" src="{{ (partial "get-site-image" "logo.svg" ).Permalink }}" alt="Logo">
+            </a>
+            <nav>
+                <header>
+                    {{- range .Site.Menus.dropdown -}}{{ .Name }}{{- end -}}
+                </header>
+                {{- range .Site.Menus.dropdown_list -}}
+                    <p>
+                        <a href='{{ .URL | absLangURL }}'>
+                            {{ .Name }}
+                        </a>
+                    </p>
+                {{- end -}}
+            </nav>
+            <nav>
+                <header>
+                    {{ .Site.Title }}
+                </header>
+                {{- range .Site.Menus.main_menu -}}
+                    <p>
+                        <a
+                            href="{{ .URL | absLangURL }}">
+                            {{.Name}}
+                        </a>
+                    </p>
+                {{- end -}}
+            </nav>
+            <address>
+                <header>
+                    {{ i18n "contact_info" }}
+                </header>
+                <p>
+                    <a href="{{ .Site.Params.contact.gmap_link }}" target="_blank">
+                        {{ .Site.Params.contact.address }}
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto:{{ .Site.Params.contact.email }}">
+                        {{ .Site.Params.contact.email }}
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:{{ .Site.Params.contact.phone_link }}">
+                        {{ .Site.Params.contact.phone }}
+                    </a>
+                </p>
+                <p class='socials'>
+                    {{ range .Site.Params.social_media }}
+                        <a href="{{ .Url }}" target="_blank">
+                            <i class='fab fa-{{ .Icon }}'></i>
+                        </a>
+                    {{ end }}
+                </p>
+            </address>
+        </footer>
+        <section class="legal">
+            <p class="copyright">© {{ now.Format "2006" }} {{ .Site.Title }} {{ i18n "all_rights_reserved" }}</p>
+            <a href="/avis-legal">{{ i18n "avis-legal" }}</a>
+            <div class="made-by">
+                {{ i18n "made_by" }}<a href="https://bolean.ca/" target="_blank">bolēan</a>, 
+                {{ i18n "a_divison_of" }}<a href="https://proitek.ca/" target="_blank">Pro-iTek</a>
+            </div>
+        </section>
+
+        <script>
+            function toggleCollapsibleNav(event) {
+                event.preventDefault();
+                var collapseNav = document.querySelector('.js-collapsible');
+                collapseNav.classList.toggle('active');
+            }
+
+            function toggleBurgerMenu(burger) {
+                burger.classList.toggle('active');
+                document.querySelector('nav').classList.toggle('active');
+                document.querySelector('body').classList.toggle('freeze');
+                document.querySelectorAll('.js-collapsible').forEach(el => el.classList.add('active'));
+            }
+        </script>
+
+        {{ partial "script-src" "sanity" }}
+
+        {{ $js := resources.Get "js/animations.js" | minify | fingerprint }}
+        <script src="{{ $js.Permalink }}"></script>
+
+        {{- block "body_end" . -}}
+        {{ end }}
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<section id='{{ partial "get-block-slug" . }}'{{ with .Params.class_list }} class='{{ . }}'{{ end }}>
+	{{ .Content }}
+
+	<form id="form-formspree">
+		<fieldset>
+			{{ range .Params.fields }}
+				{{ partial (printf "input-fields/%s" .type) . }}
+			{{ end }}
+		</fieldset>
+		<button>
+			{{ .Params.labels.submit }}
+		</button>
+	</form>
+</section>
+
+{{ partial "script-src" "bolean-form.dist" }}
+
+<script>
+  const f = new BoleanForm({
+      element: '#form-formspree',
+      email: '{{ .Site.Params.formspree_email }}',
+      endpoint: 'https://formspree.io/f/{{ .Site.Params.formspree_id }}',
+      callback: {
+          success: () => {
+                  document.querySelector('#form-formspree').outerHTML = '<div class="alert -success">{{ i18n "contact_request_sent"}}</div>';
+                  window.location.href = "#form";
+            },
+          failed: (e) => {
+                  document.querySelector('#form-formspree').outerHTML = '<div class="alert -failed">{{ i18n "contact_request_failed"}}</div>';
+                  window.location.href = "#form";
+          }
+        }
+    });
+</script>

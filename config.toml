@@ -1,0 +1,158 @@
+baseURL = '/'
+defaultContentLanguage = "fr"
+disableHugoGeneratorInject = true
+theme = ["bolean-utils"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+    gtm = 'TO-BE-EDITED'
+    formspree_id = "..."
+    formspree_email = "...@..."
+[params.social_media]
+    [params.social_media.facebook]
+        weight = 1
+        icon = "facebook-square"
+        url = "https://www.facebook.com/..."
+    [params.social_media.instagram]
+        weight = 2
+        icon = "instagram"
+        url = "https://www.instagram.com/..."
+    [params.social_media.twitter]
+        weight = 3
+        icon = "twitter"
+        url = "https://twitter.com/..."
+    [params.social_media.youtube]
+        weight = 4
+        icon = "youtube"
+        url = "https://youtube.com/..."
+    [params.social_media.linkedin]
+        weight = 5
+        icon = "linkedin"
+        url = "https://linkedin.com/..."
+[params.contact]
+    phone = "(...) ...-...."
+    phone_link = ".........."
+    email = "...@..."
+    address = "..."
+    gmap_link = "https://goo.gl/maps/..."
+
+[languages.fr]
+title = "Titre_du_Site"
+languageName = "Français"
+LanguageCode = "fr"
+
+[[languages.fr.menu.main_menu]]
+url = "/a-propos/"
+name = "À propos"
+weight = 1
+identifier = "a-propos"
+
+[[languages.fr.menu.main_menu]]
+url = "/carrieres/"
+name = "Carrières"
+weight = 2
+identifier = "carrieres"
+
+[[languages.fr.menu.main_menu]]
+url = "/contact/"
+name = "Contact"
+weight = 3
+identifier = "contact"
+
+[[languages.fr.menu.dropdown]]
+url = "/dropdown/link1/"
+name = "Dropdown"
+weight = 1
+identifier = "dropdown"
+
+[[languages.fr.menu.dropdown_list]]
+url = "/dropdown/link1/"
+name = "Dropdown-link1"
+weight = 1
+identifier = "link1"
+
+[[languages.fr.menu.dropdown_list]]
+url = "/dropdown/link2/"
+name = "Dropdown-link2"
+weight = 2
+identifier = "link2"
+
+[[languages.fr.menu.dropdown_list]]
+url = "/dropdown/link3/"
+name = "Dropdown-link3"
+weight = 3
+identifier = "link3"
+
+[[languages.fr.menu.dropdown_list]]
+url = "/dropdown/link4/"
+name = "Dropdown-link4"
+weight = 4
+identifier = "link4"
+
+[[languages.fr.menu.dropdown_list]]
+url = "/dropdown/link5/"
+name = "Dropdown-link5"
+weight = 5
+identifier = "link5"
+
+[languages.en]
+title = "Website_Title"
+languageName = "English"
+LanguageCode = "en"
+
+[[languages.en.menu.main_menu]]
+url = "/en/a-propos/"
+name = "About"
+translationKey = 'about'
+weight = 1
+identifier = "about"
+
+[[languages.en.menu.main_menu]]
+url = "/en/carrieres/"
+name = "Careers"
+weight = 2
+identifier = "carrieres"
+
+[[languages.en.menu.main_menu]]
+url = "/en/contact/"
+name = "Contact"
+weight = 3
+identifier = "contact"
+
+[[languages.en.menu.dropdown]]
+url = "/en/dropdown/link1/"
+name = "Dropdown"
+weight = 1
+identifier = "dropdown"
+
+[[languages.en.menu.dropdown_list]]
+url = "/en/dropdown/link1/"
+name = "Dropdown-link1"
+weight = 1
+identifier = "link1"
+
+[[languages.en.menu.dropdown_list]]
+url = "/en/dropdown/link2/"
+name = "Dropdown-link2"
+weight = 2
+identifier = "link2"
+
+[[languages.en.menu.dropdown_list]]
+url = "/en/dropdown/link3/"
+name = "Dropdown-link3"
+weight = 3
+identifier = "link3"
+
+[[languages.en.menu.dropdown_list]]
+url = "/en/dropdown/link4/"
+name = "Dropdown-link4"
+weight = 4
+identifier = "link4"
+
+[[languages.en.menu.dropdown_list]]
+url = "/en/dropdown/link5/"
+name = "Dropdown-link5"
+weight = 5
+identifier = "link5"

@@ -1,0 +1,34 @@
+<section id="{{ partial "get-block-slug" . }}" class='{{ with .Params.class_list }} {{ . }}{{ end }}'>
+    {{ $page := . }}
+    {{ $images := .Resources.ByType "image" }}
+    {{ range $images }}
+        {{ $meta := "" }}
+        {{ if $page.Resources.GetMatch (printf "%s.toml" .Name) }}
+            {{ $meta := ($page.Resources.GetMatch (printf "%s.toml" .Name)) | transform.Unmarshal }}
+            <a
+                href="https://player.vimeo.com/video/{{ $meta.vimeoId }}"
+                data-height="1080"
+                data-width="720"
+                data-iframe="https://player.vimeo.com/video/{{ $meta.vimeoId }}"
+                >
+                <figure>
+                    <img loading="lazy" src="{{ .Permalink }}">
+                    <img loading="lazy" class="play-video" src="{{ (partial "get-site-image" "play.svg" ).Permalink }}" alt="play">
+                </figure>
+            </a>
+        {{ else }}
+            <a
+                href="{{ .Permalink }}"
+                data-img="{{ .Permalink }}"
+                data-thumb="{{ (.Resize "x1112 q80 webp").Permalink }}"
+                data-height="{{ .Height }}"
+                data-width="{{ .Width }}"
+                data-max-zoom="2"
+            >
+                <figure>
+                    <img loading="lazy" src="{{ (.Resize "x1112 q80 webp").Permalink }}">
+                </figure>
+            </a>
+        {{ end }}
+    {{ end }}
+</section>

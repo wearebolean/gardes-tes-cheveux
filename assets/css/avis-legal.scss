@@ -1,0 +1,18 @@
+@import 'shared';
+
+main {
+    background-color: $color-white;
+    color: $color-black;
+    @include default-paddingX();
+    @include container-width();
+    @include default-paddingY('big');
+
+    h3 {
+        margin-top: $spacing-medium;
+    }
+
+    a {
+        word-wrap: break-word;
+        color: $color-accent;
+    }
+}

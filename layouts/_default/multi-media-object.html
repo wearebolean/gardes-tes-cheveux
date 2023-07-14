@@ -1,0 +1,13 @@
+<section id='{{ partial "get-block-slug" . }}' class='{{ with .Params.class_list }} {{ . }}{{ end }}'>
+	<div class='content'>
+		{{ .Content }}
+	</div>
+
+	<div class="images">
+		{{ range .Resources.ByType "image" }}
+			<figure>
+				<img loading="lazy" src="{{ .Permalink }}"> <!-- Not optimizing images since in this case these are SVGs -->
+			</figure>
+		{{ end }}
+	</div>
+</section>

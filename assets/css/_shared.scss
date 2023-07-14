@@ -1,0 +1,232 @@
+//-- Colors
+$color-primary: #403d39;
+$color-secondary: #252422;
+$color-accent: #eb5e28;
+$color-white: #ffffff;
+$color-gray:  #999;
+$color-black: #000000;
+$color-error: #d22b2b;
+
+// Fonts
+$font-family-base: sans-serif;
+
+// Sizes
+$font-size-base: 18px;
+$font-size-tablet: 16px;
+$font-size-mobile: 14px;
+
+// Colors
+$font-color-base: $color-black;
+$font-color-light: $color-white;
+$link-color-common: $color-secondary;
+
+$font-weight-base: 300;
+$font-weight-bold: 700;
+
+//-- Media Queries
+$media-tiny: 350px;
+$media-xs: 480px;
+$media-mobile: 767px;
+$media-tablet: 998px;
+$media-laptop: 1200px;
+$media-large: 1440px;
+$media-desktop: 1921px;
+$media-max: 2560px;
+
+@mixin media-custom-size($size) {
+	@media screen and (max-width: $size) {
+		@content;
+	}
+}
+
+@mixin media-tiny() {
+	@media screen and (max-width: $media-tiny) {
+		@content;
+	}
+}
+
+@mixin media-xs() {
+	@media screen and (max-width: $media-xs) {
+		@content;
+	}
+}
+
+@mixin media-mobile() {
+	@media screen and (max-width: $media-mobile) {
+		@content;
+	}
+}
+
+@mixin media-tablet() {
+	@media screen and (max-width: $media-tablet) {
+		@content;
+	}
+}
+
+@mixin media-laptop() {
+	@media screen and (max-width: $media-laptop) {
+		@content;
+	}
+}
+
+@mixin media-large() {
+	@media screen and (max-width: $media-large) {
+		@content;
+	}
+}
+
+@mixin media-desktop() {
+	@media screen and (min-width: $media-desktop) {
+		@content;
+	}
+}
+
+@mixin media-max() {
+	@media screen and (min-width: $media-max) {
+		@content;
+	}
+}
+
+h1, %h1 { 
+	font-size: 4rem;
+
+	@include media-tablet() {
+		font-size: 3.5rem;
+	}
+
+	@include media-mobile() {
+		font-size: 2.5rem;
+	}
+}
+h2, %h2 { 
+	font-size: 2.75rem;
+
+	@include media-mobile() {
+		font-size: 2.25rem;
+	}
+}
+h3, %h3 { font-size: 1.67rem; }
+
+@mixin button($type: 'default') {
+	display: inline-flex;
+	align-items: center;
+	font-family: $font-family-base;
+	font-weight: $font-weight-bold;
+	font-size: 1rem;
+	color: $font-color-base;
+	border: 2px solid $font-color-base;
+	border-radius: 25px;
+	padding: 0.5rem 1.5rem;
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+	transition: $ui-transitions;
+
+	&:hover {
+		color: $color-accent;
+		border-color:  $color-accent;
+	}
+
+	@if $type == 'light' {
+		color: $font-color-light;
+		border-color:  $font-color-light;
+	}
+
+	@if $type == 'accent' {
+		border: none;
+		background-color: $color-primary;
+
+		&:hover {
+			background-color: $color-white;
+		}
+	}
+}
+
+//-- Spacing
+$spacing-xsmall: 0.5rem;
+$spacing-small: 1rem;
+$spacing-medium: 2rem;
+$spacing-large: 4rem;
+$spacing-huge: 7rem;
+$spacing-insane: 10rem;
+$spacing-ridiculous: 15rem;
+
+@mixin default-paddingX() {
+	padding-inline: $spacing-huge;
+
+	@include media-laptop {
+		padding-inline: $spacing-medium;
+	}
+}
+
+@mixin default-paddingY($size: 'default') {
+	@if $size == 'default' {
+		padding-block: $spacing-large;
+	}
+
+	@if $size == 'big' {
+		padding-block: $spacing-huge;
+	}
+}
+
+//-- Section centering
+$container-medium: 1200px;
+$container-full: 1600px;
+
+// Because who needs containers
+@mixin container-width($size: $container-full) {
+	$breakpoint: calc(#{$size} + (#{$spacing-huge} * 2));
+
+	@media screen and (min-width: $breakpoint) {
+		padding-inline: calc((100% - #{$size}) / 2);
+	}
+}
+
+// Z-index
+$zindex-menu: 50;
+$zindex-popup: 10;
+$zindex-max: 99999;
+
+// Transitions
+$ui-transitions: all 250ms ease-in-out;
+
+// Borders
+$border-radius-common: 10px;
+
+// Box-shadows
+$box-shadow-common: 4px 0px 15px -3px rgba(0, 0, 0, 0.1);
+$box-shadow-focus: 0 0 4px $color-primary;
+
+//-- Graphical mixins
+@mixin gallery($cols) {
+	display: grid;
+	grid-template-columns: repeat($cols, 1fr);
+	@include container-width();
+
+	a {
+		cursor: pointer;
+	}
+
+	figure { position: relative; }
+
+	.play-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+//-- Misc mixins
+@mixin flex-center() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@function rem($size) {
+	@return ($size / $font-size-base) * 1rem;
+}

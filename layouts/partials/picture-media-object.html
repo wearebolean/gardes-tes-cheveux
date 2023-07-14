@@ -1,0 +1,3 @@
+{{ with . }}
+	<img loading="lazy" srcset="{{ (.Resize "x1300 q80 webp").Permalink }} 1200w, {{ (.Resize "x900 q80 webp").Permalink }} 900w, {{ (.Resize "x400 q80 webp").Permalink }} 650w" src="{{ (.Resize "x1300 q80 webp").Permalink }}" alt="">
+{{ end }}

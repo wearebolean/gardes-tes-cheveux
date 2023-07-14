@@ -1,0 +1,7 @@
+{{ if eq .Params.section_type "test" }}
+<section id='{{ partial "get-block-slug" . }}'>
+	<div class='content'>
+		{{ .Content }}
+	</div>
+</section>
+{{ end }}

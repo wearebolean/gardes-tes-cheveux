@@ -1,0 +1,50 @@
+# Form
+
+[contact_full_name]
+other = "Full Name"
+
+[contact_company]
+other = "Company"
+
+[contact_phone]
+other = "Telephone"
+
+[contact_email]
+other = "Email"
+
+[contact_address]
+other = "Address"
+
+[contact_city]
+other = "City"
+
+[contact_postal_code]
+other = "Postal Code"
+
+[contact_submit]
+other = "Submit"
+
+[contact_request_sent]
+other = "Thank you, your message has been sent."
+
+[contact_request_failed]
+other = "An error has occurred, unable to send your message. Please try again."
+
+
+# Footer
+
+[contact_info]
+other = "Contact details"
+
+[all_rights_reserved]
+other = "all rights reserved."
+
+[avis-legal]
+other = "Legal Notice"
+
+[made_by]
+other = "Made by "
+
+[a_divison_of]
+other = "a division of "
+

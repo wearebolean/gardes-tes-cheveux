@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+	{{ range (partial "get-section-pages" "home") }}
+		{{ .Render (default "generic-block" .Params.render_as) }}
+	{{ end }}
+
+{{ end }}
+
+{{ define "body_end" }}
+
+{{ end }}

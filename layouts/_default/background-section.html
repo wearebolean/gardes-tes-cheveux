@@ -1,0 +1,8 @@
+<section id='{{ partial "get-block-slug" . }}'{{ with .Params.class_list }} class='{{ .}}'{{ end }}>
+	{{ with (partial "get-first-image" .) }}
+		<img loading="lazy" src="{{ (.Resize "2560x q100").Permalink }}" alt="">
+	{{ end }}
+	<div class="content">
+		{{ .Content }}
+	</div>
+</section>
