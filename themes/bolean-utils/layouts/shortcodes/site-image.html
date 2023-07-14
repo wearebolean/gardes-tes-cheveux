@@ -1,0 +1,1 @@
+<img {{ if (.Get 1) }}class='{{ .Get 1 }}'{{ end }} src='{{ (resources.Get (printf "images/%s" (.Get 0)) | fingerprint).Permalink }}'>

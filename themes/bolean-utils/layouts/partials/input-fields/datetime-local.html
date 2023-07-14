@@ -1,0 +1,4 @@
+<p {{ if .class }}class="{{ .class }}"{{ end }}>
+    <label for="{{ .name }}">{{ .label }}</label>
+    <input type="datetime-local" id="{{ .name }}" name="{{ .name }}" {{ if .required }}required{{ end }}>
+</p>

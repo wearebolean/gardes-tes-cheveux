@@ -1,0 +1,12 @@
+<p {{ if .class }}class="{{ .class }}"{{ end }}>
+	<label class='dropdown' for='field_{{ .name }}'>{{ .label }}</label>
+
+	<select id='field_{{ .name }}' name='{{ .name }}' {{ if .required }}required{{ end }}>
+		{{ if .include_blank }}
+		<option></option>
+		{{ end }}
+		{{ range .options }}
+		<option value='{{ .value }}'>{{ .label }}</option>
+		{{ end }}
+	</select>
+</p>

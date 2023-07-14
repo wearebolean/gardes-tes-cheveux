@@ -1,0 +1,12 @@
+<p {{ if .class }}class="{{ .class }}"{{ end }}>
+	<label for='field_{{ .name }}'>{{ .label }}</label>
+	<input
+        type='number'
+        id='field_{{ .name }}'
+        name='{{ .name }}'
+        min='{{ .min }}'
+        max='{{ .max }}'
+        {{ if .required }}required{{ end }}
+        {{ if .pattern }}pattern='{{ .pattern }}'{{ end }}
+    >
+</p>

@@ -1,0 +1,2 @@
+{{ $js := resources.Get (printf "js/%s.js" .) | minify | fingerprint }}
+<script src="{{ $js.Permalink }}"></script>

@@ -1,0 +1,11 @@
+<section id='{{ partial "get-block-slug" . }}' class='{{ with .Params.class_list }} {{ . }}{{ end }}'>
+	<figure>
+		{{ partial "picture-16-9" (partial "get-first-image" .) }}
+	</figure>
+
+	{{ with .Content }}
+		<div class='content'>
+			{{- . -}}
+		</div>
+	{{ end }}
+</section>

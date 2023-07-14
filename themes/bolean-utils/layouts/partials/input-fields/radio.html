@@ -1,0 +1,11 @@
+<div {{ if .class }}class="{{ .class }}"{{ end }}>
+	<legend for='field_{{ .name }}'>{{ .label }}</legend>
+
+	{{ $field_name := print "field_" .name }}
+	{{ range .inputs }}
+		<div>
+			<input id="{{ .name }}" type="radio" name="{{ $field_name }}" value="{{ .value }}" {{ if .required }}required{{ end }}>
+			<label for="{{ .name }}">{{ .label }}</label>
+		</div>
+	{{ end }}
+</div>
