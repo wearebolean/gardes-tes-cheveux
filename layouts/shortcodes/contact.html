@@ -1,0 +1,27 @@
+<address>
+    <h2>
+        {{ i18n "contact_info" }}
+    </h2>
+    <p>
+        <a href="{{ .Site.Params.contact.gmap_link }}" target="_blank">
+            {{ .Site.Params.contact.address }}
+        </a>
+    </p>
+    <p>
+        <a href="mailto:{{ .Site.Params.contact.email }}">
+            {{ .Site.Params.contact.email }}
+        </a>
+    </p>
+    <p>
+        <a href="tel:{{ .Site.Params.contact.phone_link }}">
+            {{ .Site.Params.contact.phone }}
+        </a>
+    </p>
+    <p class='socials'>
+        {{ range .Site.Params.social_media }}
+            <a href="{{ .Url }}" target="_blank">
+                <i class='fab fa-{{ .Icon }}'></i>
+            </a>
+        {{ end }}
+    </p>
+</address>

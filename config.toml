@@ -1,18 +1,18 @@
-gmap_link = "LIEN GOOGLE MAP"
+
 disableHugoGeneratorInject = true
 theme = ["bolean-utils"]
-formspree_email = "COURRIEL POUR RÉCEPTION DES FORMULAIRES"
-phone = "TÉLÉPHONE"
-phone_link = "TÉLÉPHONE (10 CHIFFRES SANS CHARACTÈRE SPÉCIAL)"
 defaultContentLanguage = "fr"
-adress = "ADRESSE"
-email = "COURRIEL"
 baseURL = "/"
 
 [params]
 gtm = "TO-BE-EDITED"
 formspree_id = "..."
 formspree_email = "...@..."
+gmap_link = "LIEN GOOGLE MAP edited"
+adress = "ADRESSE"
+email = "COURRIEL"
+phone = "TÉLÉPHONE"
+phone_link = "TÉLÉPHONE (10 CHIFFRES SANS CHARACTÈRE SPÉCIAL)"
 
 [params.social_media]
 

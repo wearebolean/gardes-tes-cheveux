@@ -27,10 +27,6 @@ body {
 	}
 }
 
-body:not(.avis-legal) main {
-	a { @include button('default'); }
-}
-
 /* NOTE: heading font-sizes are in shared. */
 h1,
 h2,
