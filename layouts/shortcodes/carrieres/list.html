@@ -1,0 +1,13 @@
+{{ with .Site.GetPage "carrieres.list" }}
+	<ul>
+		{{ range where .Pages "visible" "true" }}
+			<li>
+				<a href="{{ .Permalink }}">
+					<span>{{ .Page.Params.job_title }}</span>
+                    <br>
+                    <em>{{ .Params.area }}</em> 
+				</a>
+			</li>
+		{{ end }}
+	</ul>
+{{ end }}
