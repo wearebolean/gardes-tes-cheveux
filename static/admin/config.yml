@@ -73,9 +73,9 @@ collections:
         editor:
           preview: false
         fields:
-          - {label: Courriel pour réception des formulaires, name: formspree_email, widget: string}
-          - {label: Téléphone, name: phone, widget: string}
-          - {label: Téléphone (10 chiffres sans charactère spécial), name: phone_link, widget: string}
-          - {label: Courriel, name: email, widget: string}
-          - {label: Adresse, name: adress, widget: string}
-          - {label: Lien Google Map, name: gmap_link, widget: string}
+          - {label: Courriel pour réception des formulaires, name: [params]formspree_email, widget: string}
+          - {label: Téléphone, name: [params]phone, widget: string}
+          - {label: Téléphone (10 chiffres sans charactère spécial), name: [params]phone_link, widget: string}
+          - {label: Courriel, name: [params]email, widget: string}
+          - {label: Adresse, name: [params]adress, widget: string}
+          - {label: Lien Google Map, name: [params]gmap_link, widget: string}
