@@ -1,0 +1,6 @@
+# Usual suspects
+.vscode/
+**/*.swp
+**/*.swo
+.sass-cache
+.DS_Store

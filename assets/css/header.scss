@@ -86,12 +86,14 @@ body > header {
          }
     }
 
-    .-dropdown {
+    .dropdown {
         & > a { 
             display: flex;
             align-items: center;
 
-            svg { margin-left: 0.25rem; }
+            i { margin-left: 0.25rem; }
+
+            .active { transform: rotate(-90deg); }
         }
 
         & > .dropdown-content { 
@@ -103,7 +105,6 @@ body > header {
             margin-top: $spacing-xsmall;
 
             @include media-tablet() {
-                display: block;
                 position: relative;
                 background-color: transparent;
                 margin-top: 0;
@@ -116,16 +117,8 @@ body > header {
             margin-bottom: $spacing-xsmall;
         }
 
-        &.active {
-            svg { transform: rotate(-90deg); }
-
-            & > .dropdown-content {
-                display: block;
-
-                @include media-tablet() {
-                    display: none;
-                }
-            }
+        & > .active {
+            display: block;
         }
     }
 

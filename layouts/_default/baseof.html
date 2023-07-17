@@ -70,13 +70,13 @@
             </a>
 
             <nav>
-                <section class="-dropdown js-collapsible">
+                <section class="dropdown">
                     {{- range .Site.Menus.dropdown -}}
-                        <a href='{{ .URL | absLangURL }}' onclick="toggleCollapsibleNav(event);">
-                            {{ .Name }} {{ partial "images/angle-down" }}
+                        <a href='{{ .URL | absLangURL }}' onclick="toggleCollapsibleNav(event);" class="dropdown-button">
+                            {{ .Name }} <i class="fa fa-caret-down"></i>
                         </a>
                     {{- end -}}
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="dropdown-content">
                         {{- range .Site.Menus.dropdown_list -}}
                             <a href='{{ .URL | absLangURL }}' class="{{ if (eq $currentPage.Permalink (.URL | absLangURL)) }}active-link {{ end }}">
                                 {{ .Name }}
@@ -176,8 +176,21 @@
         <script>
             function toggleCollapsibleNav(event) {
                 event.preventDefault();
-                var collapseNav = document.querySelector('.js-collapsible');
+                var collapseNav = document.querySelector('.dropdown-content');
+                var arrowDown = document.querySelector('.fa-caret-down');
                 collapseNav.classList.toggle('active');
+                arrowDown.classList.toggle('active');
+            }
+
+            window.onclick = function(e) {
+              if (!e.target.matches('.dropdown-button')) {
+              var dropdown = document.getElementById("dropdown-content");
+              var arrowDown = document.querySelector('.fa-caret-down');
+                if (dropdown.classList.contains('active')) {
+                  dropdown.classList.remove('active');
+                  arrowDown.classList.remove('active');
+                }
+              }
             }
 
             function toggleBurgerMenu(burger) {
