@@ -31,8 +31,8 @@ collections:
         widget: "select"
         i18n: duplicate
         options:
-          - { label: "Oui", value: true }
-          - { label: "Non", value: false }
+          - { label: "Oui", value: "true" }
+          - { label: "Non", value: "false" }
       - label: "Sitemap"
         name: "sitemap"
         widget: "hidden"
