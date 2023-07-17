@@ -1,47 +1,68 @@
-baseURL = '/'
-defaultContentLanguage = "fr"
+gmap_link = "LIEN GOOGLE MAP"
 disableHugoGeneratorInject = true
 theme = ["bolean-utils"]
+formspree_email = "COURRIEL POUR RÉCEPTION DES FORMULAIRES"
+phone = "TÉLÉPHONE"
+phone_link = "TÉLÉPHONE (10 CHIFFRES SANS CHARACTÈRE SPÉCIAL)"
+defaultContentLanguage = "fr"
+adress = "ADRESSE"
+email = "COURRIEL"
+baseURL = "/"
+
+[params]
+gtm = "TO-BE-EDITED"
+formspree_id = "..."
+formspree_email = "...@..."
+
+[params.social_media]
+
+[params.social_media.facebook]
+weight = 1
+icon = "facebook-square"
+url = "https://www.facebook.com/..."
+
+[params.social_media.instagram]
+weight = 2
+icon = "instagram"
+url = "https://www.instagram.com/..."
+
+[params.social_media.twitter]
+weight = 3
+icon = "twitter"
+url = "https://twitter.com/..."
+
+[params.social_media.youtube]
+weight = 4
+icon = "youtube"
+url = "https://youtube.com/..."
+
+[params.social_media.linkedin]
+weight = 5
+icon = "linkedin"
+url = "https://linkedin.com/..."
+
+[params.contact]
+phone = "(...) ...-...."
+phone_link = ".........."
+email = "...@..."
+address = "..."
+gmap_link = "https://goo.gl/maps/..."
+
+[markup]
+
+[markup.goldmark]
 
 [markup.goldmark.renderer]
 unsafe = true
 
-[params]
-    gtm = 'TO-BE-EDITED'
-    formspree_id = "..."
-    formspree_email = "...@..."
-[params.social_media]
-    [params.social_media.facebook]
-        weight = 1
-        icon = "facebook-square"
-        url = "https://www.facebook.com/..."
-    [params.social_media.instagram]
-        weight = 2
-        icon = "instagram"
-        url = "https://www.instagram.com/..."
-    [params.social_media.twitter]
-        weight = 3
-        icon = "twitter"
-        url = "https://twitter.com/..."
-    [params.social_media.youtube]
-        weight = 4
-        icon = "youtube"
-        url = "https://youtube.com/..."
-    [params.social_media.linkedin]
-        weight = 5
-        icon = "linkedin"
-        url = "https://linkedin.com/..."
-[params.contact]
-    phone = "(...) ...-...."
-    phone_link = ".........."
-    email = "...@..."
-    address = "..."
-    gmap_link = "https://goo.gl/maps/..."
+[languages]
 
 [languages.fr]
 title = "Titre_du_Site"
 languageName = "Français"
 LanguageCode = "fr"
+
+[languages.fr.menu]
 
 [[languages.fr.menu.main_menu]]
 url = "/a-propos/"
@@ -102,10 +123,12 @@ title = "Website_Title"
 languageName = "English"
 LanguageCode = "en"
 
+[languages.en.menu]
+
 [[languages.en.menu.main_menu]]
 url = "/en/a-propos/"
 name = "About"
-translationKey = 'about'
+translationKey = "about"
 weight = 1
 identifier = "about"
 
