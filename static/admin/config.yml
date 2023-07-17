@@ -13,10 +13,74 @@ i18n:
     - "en"
 
 collections: 
+  - label: Carrieres
+    name: "carrieres"
+    folder: "content/carrieres/cms-jobs"
+    create: true
+    slug: "_{{slug}}/index"
+    i18n: true
+    editor:
+      preview: false
+    fields:
+      - label: "Title"
+        name: "title"
+        hint: "Le nom unique du dossier qui contiendra toutes les infos ci-bas. Ex: nom-separer-par-des-traits"
+        widget: "string"
+      - label: "Affiché sur le site?"
+        name: "visible"
+        widget: "select"
+        i18n: duplicate
+        options:
+          - { label: "Oui", value: true }
+          - { label: "Non", value: false }
+      - label: "Sitemap"
+        name: "sitemap"
+        widget: "hidden"
+        default: "true"
+        i18n: duplicate
+      - label: "Render as"
+        name: "render_as"
+        widget: "hidden"
+        default: "cms-jobs"
+        i18n: duplicate
+      - label: "Titre de l'emploi"
+        name: "job_title"
+        widget: "string"
+        i18n: true
+      - label: "Emplacement"
+        name: "area"
+        widget: "string"
+        i18n: duplicate
+      - label: "Ton quotidien"
+        name: "quotidien"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "C’est l’emploi idéal pour toi si"
+        name: "ideal"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Ce que nous t’offrons"
+        name: "offrons"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Requis"
+        name: "requis"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "content/post" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -64,18 +128,4 @@ collections:
               - label: Text
                 name: text
                 widget: text
-  - name: "site_settings"
-    label: "Site Settings"
-    files:
-      - file: "config.toml"
-        label: Hugo Config
-        name: config
-        editor:
-          preview: false
-        fields:
-          - {label: Courriel pour réception des formulaires, name: "[params]formspree_email", widget: string}
-          - {label: Téléphone, name: "[params]phone", widget: string}
-          - {label: Téléphone (10 chiffres sans charactère spécial), name: "[params]phone_link", widget: string}
-          - {label: Courriel, name: "[params]email", widget: string}
-          - {label: Adresse, name: "[params]adress", widget: string}
-          - {label: Lien Google Map, name: "[params]gmap_link", widget: string}
+
