@@ -1,18 +1,30 @@
-
+"[params]email" = "test1"
+"[params]formspree_email" = "test1"
+"[params]phone_link" = "test1"
 disableHugoGeneratorInject = true
+"[params]gmap_link" = "test1"
 theme = ["bolean-utils"]
 defaultContentLanguage = "fr"
+"[params]phone" = "test1"
+"[params]adress" = "test1"
 baseURL = "/"
 
 [params]
 gtm = "TO-BE-EDITED"
-formspree_id = "..."
-formspree_email = "...@..."
 gmap_link = "LIEN GOOGLE MAP edited"
+formspree_id = "..."
+phone_link = "TÉLÉPHONE (10 CHIFFRES SANS CHARACTÈRE SPÉCIAL)"
+formspree_email = "...@..."
+phone = "TÉLÉPHONE"
 adress = "ADRESSE"
 email = "COURRIEL"
-phone = "TÉLÉPHONE"
-phone_link = "TÉLÉPHONE (10 CHIFFRES SANS CHARACTÈRE SPÉCIAL)"
+
+[params.contact]
+phone = "(...) ...-...."
+phone_link = ".........."
+email = "...@..."
+address = "..."
+gmap_link = "https://goo.gl/maps/..."
 
 [params.social_media]
 
@@ -40,13 +52,6 @@ url = "https://youtube.com/..."
 weight = 5
 icon = "linkedin"
 url = "https://linkedin.com/..."
-
-[params.contact]
-phone = "(...) ...-...."
-phone_link = ".........."
-email = "...@..."
-address = "..."
-gmap_link = "https://goo.gl/maps/..."
 
 [markup]
 
