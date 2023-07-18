@@ -1,7 +1,7 @@
 <section id='{{ partial "get-block-slug" . }}' class=' media-object'>
     <div class="content">
-        <h1>{{ .Params.job_title }}</h1>
-        <p>{{ .Params.area }}</p>
+        <h1>{{ page.Params.job_title }}</h1>
+        <p>{{ page.Params.area }}</p>
     </div>
 </section>
 
@@ -11,7 +11,7 @@
         <li>
             <h3 id="ton-quotidien">{{ i18n "quotidien" }}</h3>
             <ul>
-                {{ range .Params.quotidien }}
+                {{ range page.Params.quotidien }}
                 <li>{{ .line }}</li>
                 {{ end }}
             </ul>
@@ -19,7 +19,7 @@
         <li>
             <h3 id="cest-lemploi-idéal-pour-toi-si">{{ i18n "ideal" }}</h3>
             <ul>
-                {{ range .Params.ideal }}
+                {{ range page.Params.ideal }}
                 <li>{{ .line }}</li>
                 {{ end }}
             </ul>
@@ -27,7 +27,7 @@
         <li>
             <h3 id="ce-que-nous-toffrons">{{ i18n "offrons" }}</h3>
             <ul>
-                {{ range .Params.offrons }}
+                {{ range page.Params.offrons }}
                 <li>{{ .line }}</li>
                 {{ end }}
             </ul>
@@ -35,7 +35,7 @@
         <li>
             <h3 id="requis">{{ i18n "requis" }}</h3>
             <ul>
-                {{ range .Params.requis }}
+                {{ range page.Params.requis }}
                 <li>{{ .line }}</li>
                 {{ end }}
             </ul>
