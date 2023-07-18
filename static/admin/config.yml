@@ -130,20 +130,20 @@ collections:
             public_folder: "/images"
             default: ""
             if:
-              field: "sections.section_type"
-              equals: "hero_section"
+              field: "sections"
+              value: "hero_section"
           - label: "Hero Title"
             name: "hero_title"
             widget: "string"
             required: false
             if:
-              field: "sections.section_type"
-              equals: "hero_section"
+              field: "sections"
+              value: "hero_section"
           - label: "Hero Subtitle"
             name: "hero_subtitle"
             widget: "string"
             required: false
             if:
-              field: "sections.section_type"
-              equals: "hero_section"
+              field: "sections"
+              value: "hero_section"
 
