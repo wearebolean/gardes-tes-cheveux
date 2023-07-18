@@ -43,10 +43,10 @@ collections:
         widget: "hidden"
         default: "cms-jobs"
         i18n: duplicate
-      - label: "Content",
-        name: "body",
-        widget: "hidden",
-        i18n: duplicate,
+      - label: "Content"
+        name: "body"
+        widget: "hidden"
+        i18n: duplicate
         default: '{{< render-shared "careers/_introduction" >}}'
       - label: "Titre de l'emploi"
         name: "job_title"
