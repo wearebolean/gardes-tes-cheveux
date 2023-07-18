@@ -43,6 +43,11 @@ collections:
         widget: "hidden"
         default: "cms-jobs"
         i18n: duplicate
+      - {label: "Content",
+        name: "body",
+        widget: "hidden",
+        i18n: duplicate,
+        default: '{{< render-shared "careers/_introduction" >}}'}
       - label: "Titre de l'emploi"
         name: "job_title"
         widget: "string"
@@ -75,13 +80,13 @@ collections:
         fields: 
           - {label: "Ajouter", name: "line", widget: "string"}
         i18n: true
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, ie.: "New Post"
-    folder: "content/post" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
+  - name: "post"
+    label: "Post"
+    folder: "content/post"
+    create: true
     editor:
       preview: false
-    fields: # The fields each document in this collection have
+    fields: 
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Intro Blurb", name: "description", widget: "text"}
