@@ -16,4 +16,4 @@ requis:
   - line: Line
   - line: Line
 ---
-{{< render-shared "careers/_introduction" >}}
+{{< render-shared "carrieres/_introduction" >}}

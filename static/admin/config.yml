@@ -47,7 +47,7 @@ collections:
         name: "body"
         widget: "hidden"
         i18n: duplicate
-        default: '{{< render-shared "careers/_introduction" >}}'
+        default: '{{< render-shared "carrieres/_introduction" >}}'
       - label: "Titre de l'emploi"
         name: "job_title"
         widget: "string"
