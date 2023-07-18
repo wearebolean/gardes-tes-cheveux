@@ -99,9 +99,9 @@ collections:
           {label: "Gallery Images", name: "gallery_images", widget: "list", fields: [
             {label: "Image", name: "image", widget: "image", media_folder: "static/images", public_folder: "/images"}
           ]},
-          {label: "Hero Image", name: "hero_image", widget: "image", required: false, media_folder: "static/images", public_folder: "/images", default: "", condition: {type: fieldValue, field: section_type, equals: hero_section}},
-          {label: "Hero Title", name: "hero_title", widget: "string", required: false, condition: {type: fieldValue, field: section_type, equals: hero_section}},
-          {label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false, condition: {type: fieldValue, field: section_type, equals: hero_section}}
+          {label: "Hero Image", name: "hero_image", widget: "image", required: false, media_folder: "static/images", public_folder: "/images", default: "", filter: {field: section_type, value: hero_section}},
+          {label: "Hero Title", name: "hero_title", widget: "string", required: false, filter: {field: section_type, value: hero_section}},
+          {label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false, filter: {field: section_type, value: hero_section}}
         ]}
         #   {label: "Hero Image", name: "hero_image", widget: "image", i18n: duplicate, required: false, media_folder: "static/images", public_folder: "/images", default: "", if: "section_type == 'hero_section'"},
         #   {label: "Hero Title", name: "hero_title", widget: "string", required: false, if: "section_type == 'hero_section'"},
