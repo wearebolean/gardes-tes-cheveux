@@ -3,7 +3,7 @@ backend:
   repo: wearebolean/hugo-decap-template
   branch: main
 
-media_folder: "static/img"
+media_folder: "static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 i18n:
@@ -13,6 +13,80 @@ i18n:
     - "en"
 
 collections: 
+  - label: Carrieres
+    name: "carrieres"
+    folder: "content/carrieres/list"
+    create: true
+    slug: "_{{slug}}/index"
+    i18n: true
+    editor:
+      preview: false
+    fields:
+      - label: "Title"
+        name: "title"
+        hint: "Le nom unique du dossier qui contiendra toutes les infos ci-bas. Ex: nom-separer-par-des-traits"
+        widget: "string"
+      - label: "Affiché sur le site?"
+        name: "type"
+        widget: "select"
+        i18n: duplicate
+        options:
+          - { label: "Oui", value: "visible" }
+          - { label: "Non", value: "not_visible" }
+      - label: "Sitemap"
+        name: "sitemap"
+        widget: "hidden"
+        default: "true"
+        i18n: duplicate
+      - label: "Render as"
+        name: "render_as"
+        widget: "hidden"
+        default: "cms-jobs"
+        i18n: duplicate
+      - label: "Titre de l'emploi"
+        name: "job_title"
+        widget: "string"
+        i18n: true
+      - label: "Emplacement"
+        name: "area"
+        widget: "string"
+        i18n: duplicate
+      - label: "Ton quotidien"
+        name: "quotidien"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "C’est l’emploi idéal pour toi si"
+        name: "ideal"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Ce que nous t’offrons"
+        name: "offrons"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Requis"
+        name: "requis"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "content/post" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Intro Blurb", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     files:
@@ -36,24 +110,22 @@ collections:
           - {label: "Values", name: "values", widget: "object", fields: [
               {label: "Heading", name: "heading", widget: string},
               {label: "Text", name: "text", widget: "text"}]}
-      - file: "content/a-propos/_index"
-        label: "À propos"
-        name: "a-propos"
+      - file: "content/contact/_index"
+        label: "Contact Page"
+        name: "contact"
         i18n: true
         fields:
-          - label: Nouvelle section
-            name: section
+          - {label: Title, name: title, widget: string}
+          - {label: Logo, name: logo, widget: image}
+          - {label: Body, name: body, widget: markdown}
+          - label: Contact Entries
+            name: contact_entries
             widget: list
             fields:
-              - label: Section
-                name: section_type
-                widget: select
-                options: 
-                  - { label: "Hero", value: "hero_section", widget: "object", fields: 
-                                                                        [{ - label: "Titre", name: "hero_title", widget: "string" }
-                                                                        { - label: "Sous-titre", name: "hero_subtitle", widget: "string" }
-                                                                        { - label: "Text", name: "hero_text", widget: "string" }]}
-                    - { label: "Text", value: "text_section", widget: "object", fields: 
-                                                                        [{ - label: "Titre_text", name: "hero_title", widget: "string" }
-                                                                        { - label: "Sous-titre_text", name: "hero_subtitle", widget: "string" }
-                                                                        { - label: "Text_text", name: "hero_text", widget: "string" }]}
+              - label: Heading
+                name: heading
+                widget: string
+              - label: Text
+                name: text
+                widget: text
+
