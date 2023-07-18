@@ -2,7 +2,7 @@
 type: visible
 sitemap: "true"
 render_as: cms-jobs
-job_title: An exemple for a job
+job_title: An other exemple for a job
 area: St-Sauveur, Qc
 quotidien:
   - line: Line 1

@@ -12,3 +12,7 @@
 {{ if ne $style nil }}
 	{{ partial "stylesheet-link" $style }}
 {{ end }}
+
+{{ if eq .Params.Render_as "cms-jobs" }}
+	{{ partial "stylesheet-link" "carrieres" }}
+{{ end }}

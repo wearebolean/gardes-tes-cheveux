@@ -1,9 +1,9 @@
 ---
-title: un-exemple-de-job
+title: deux-exemple-de-job
 type: visible
 sitemap: "true"
 render_as: cms-jobs
-job_title: Un exemple de job
+job_title: Deux exemple de job
 area: St-Sauveur, Qc
 quotidien:
   - line: Ligne 1

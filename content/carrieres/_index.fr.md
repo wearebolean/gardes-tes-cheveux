@@ -1,5 +1,5 @@
 ---
-title: Carrière
+title: Carrières
 description:
 alt_logo: 
 transparent_header: 

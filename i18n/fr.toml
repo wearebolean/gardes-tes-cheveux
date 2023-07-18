@@ -31,6 +31,24 @@ other = "Merci, votre message à bien été envoyé."
 other = "Une erreur s'est produite, impossible d'envoyer votre message. S'il vous plaît réessayer."
 
 
+# Carrieres
+
+[description]
+other = "Description du poste"
+
+[quotidien]
+other = "Ton quotidien"
+
+[ideal]
+other = "C’est l’emploi idéal pour toi si"
+
+[offrons]
+other = "Ce que nous t’offrons"
+
+[requis]
+other = "Requis"
+
+
 # Footer
 
 [contact_info]

@@ -1,5 +1,5 @@
 ---
-title: 
+title: Accueil
 description: 
 alt_logo: 
 transparent_header: 

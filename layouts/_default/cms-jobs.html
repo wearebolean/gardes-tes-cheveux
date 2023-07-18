@@ -1,0 +1,44 @@
+<section id='{{ partial "get-block-slug" . }}' class=' media-object'>
+    <div class="content">
+        <h1>{{ page.Params.job_title }}</h1>
+        <p>{{ page.Params.area }}</p>
+    </div>
+</section>
+
+<section id="_tasks">
+    <h2 id="description-du-poste">{{ i18n "description" }}</h2>
+    <ul>
+        <li>
+            <h3 id="ton-quotidien">{{ i18n "quotidien" }}</h3>
+            <ul>
+                {{ range page.Params.quotidien }}
+                <li>{{ .line }}</li>
+                {{ end }}
+            </ul>
+        </li>
+        <li>
+            <h3 id="cest-lemploi-idéal-pour-toi-si">{{ i18n "ideal" }}</h3>
+            <ul>
+                {{ range page.Params.ideal }}
+                <li>{{ .line }}</li>
+                {{ end }}
+            </ul>
+            </li>
+        <li>
+            <h3 id="ce-que-nous-toffrons">{{ i18n "offrons" }}</h3>
+            <ul>
+                {{ range page.Params.offrons }}
+                <li>{{ .line }}</li>
+                {{ end }}
+            </ul>
+        </li>
+        <li>
+            <h3 id="requis">{{ i18n "requis" }}</h3>
+            <ul>
+                {{ range page.Params.requis }}
+                <li>{{ .line }}</li>
+                {{ end }}
+            </ul>
+        </li>
+    </ul>
+</section>

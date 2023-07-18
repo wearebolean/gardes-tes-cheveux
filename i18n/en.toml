@@ -31,6 +31,24 @@ other = "Thank you, your message has been sent."
 other = "An error has occurred, unable to send your message. Please try again."
 
 
+# Careers
+
+[description]
+other = "Job description"
+
+[quotidien]
+other = "Your daily life"
+
+[ideal]
+other = "This is the perfect job for you if"
+
+[offrons]
+other = "What we offer you"
+
+[requis]
+other = "Requirements"
+
+
 # Footer
 
 [contact_info]

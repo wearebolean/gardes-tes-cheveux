@@ -1,2 +1,30 @@
 @import 'shared';
 
+#job-list {
+    background-color: $color-secondary;
+    @include default-paddingY('default');
+
+    ul {
+        li {
+            background-color: $color-primary;
+            padding: $spacing-xsmall $spacing-small;
+            border-radius: $border-radius-common;
+            margin-bottom: $spacing-small;
+
+            a {
+                .separateur {
+                    color: $color-accent;
+                    margin-inline: $spacing-small;
+                }
+            }
+        }
+    }
+}
+
+#_tasks {
+    @include default-paddingY('default');
+    
+    h3 {
+        margin-top: $spacing-medium;
+    }
+}

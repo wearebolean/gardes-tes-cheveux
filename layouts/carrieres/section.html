@@ -1,0 +1,17 @@
+{{ define "head_end" }}
+
+{{ end }}
+
+{{ define "main" }}
+	{{ range (partial "get-section-pages" (partial "get-section-slug" .)) }}
+	{{ $meta_block := (eq (substr (partial "get-block-slug" .) 0 1) "_") }}
+	{{ $child_of_meta := (eq (substr (partial "get-block-slug" .Parent) 0 1) "_") }}
+		{{ if and (not $child_of_meta) (not $meta_block) }}
+			{{ .Render (default "generic-block" .Params.render_as) }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+{{ define "body_end" }}
+	{{ partial "script-src" "forms" }}
+{{ end }}

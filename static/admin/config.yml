@@ -27,12 +27,12 @@ collections:
         hint: "Le nom unique du dossier qui contiendra toutes les infos ci-bas. Ex: nom-separer-par-des-traits"
         widget: "string"
       - label: "Affiché sur le site?"
-        name: "visible"
+        name: "type"
         widget: "select"
         i18n: duplicate
         options:
-          - { label: "Oui", value: "true" }
-          - { label: "Non", value: "false" }
+          - { label: "Oui", value: "visible" }
+          - { label: "Non", value: "not_visible" }
       - label: "Sitemap"
         name: "sitemap"
         widget: "hidden"

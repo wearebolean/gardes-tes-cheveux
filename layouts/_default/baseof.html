@@ -57,7 +57,7 @@
     </head>
 
     {{ $currentPage := . }}
-    <body class="{{ if .IsHome }}home{{ else }}{{ .Section }}{{ end }}{{ if .IsPage }}page{{ end }}">
+    <body class="{{ if .IsHome }}home{{ else }}{{ .Section }}{{ end }}">
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtm }}"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <header {{ if .Params.transparent_header }}class="transparent_header"{{ end }}>
