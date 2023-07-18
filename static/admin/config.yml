@@ -3,7 +3,7 @@ backend:
   repo: wearebolean/hugo-decap-template
   branch: main
 
-media_folder: "static/images" # Folder where user uploaded files should go
+media_folder: "static/images"
 public_folder: "images"
 
 i18n:
@@ -86,25 +86,64 @@ collections:
     create: true
     slug: "{{slug}}/index"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Sections", name: "sections", widget: "list", fields: [
-          {label: "Section Type", name: "section_type", widget: "select", options: [
-            {label: "Text Section", value: "text_section"},
-            {label: "Image Section", value: "image_section"},
-            {label: "Gallery Section", value: "gallery_section"},
-            {label: "Hero Section", value: "hero_section"}
-          ]},
-          {label: "Section Content", name: "section_content", widget: "markdown", required: false, media_folder: "static/content", public_folder: "/content"},
-          {label: "Image", name: "image", widget: "image", required: false, media_folder: "static/images", public_folder: "/images"},
-          {label: "Gallery Images", name: "gallery_images", widget: "list", fields: [
-            {label: "Image", name: "image", widget: "image", media_folder: "static/images", public_folder: "/images"}
-          ]},
-          {label: "Hero Image", name: "hero_image", widget: "image", required: false, media_folder: "static/images", public_folder: "/images", default: "", filter: {field: section_type, value: hero_section}},
-          {label: "Hero Title", name: "hero_title", widget: "string", required: false, filter: {field: section_type, value: hero_section}},
-          {label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false, filter: {field: section_type, value: hero_section}}
-        ]}
-        #   {label: "Hero Image", name: "hero_image", widget: "image", i18n: duplicate, required: false, media_folder: "static/images", public_folder: "/images", default: "", if: "section_type == 'hero_section'"},
-        #   {label: "Hero Title", name: "hero_title", widget: "string", required: false, if: "section_type == 'hero_section'"},
-        #   {label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false, if: "section_type == 'hero_section'"}
-        # ]}
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        fields:
+          - label: "Section Type"
+            name: "section_type"
+            widget: "select"
+            options:
+              - { label: "Text Section", value: "text_section" }
+              - { label: "Image Section", value: "image_section" }
+              - { label: "Gallery Section", value: "gallery_section" }
+              - { label: "Hero Section", value: "hero_section" }
+          - label: "Section Content"
+            name: "section_content"
+            widget: "markdown"
+            required: false
+            media_folder: "static/content"
+            public_folder: "/content"
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            required: false
+            media_folder: "static/images"
+            public_folder: "/images"
+          - label: "Gallery Images"
+            name: "gallery_images"
+            widget: "list"
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                media_folder: "static/images"
+                public_folder: "/images"
+          - label: "Hero Image"
+            name: "hero_image"
+            widget: "image"
+            required: false
+            media_folder: "static/images"
+            public_folder: "/images"
+            default: ""
+            conditional:
+              - field: "sections.section_type"
+                value: "hero_section"
+          - label: "Hero Title"
+            name: "hero_title"
+            widget: "string"
+            required: false
+            conditional:
+              - field: "sections.section_type"
+                value: "hero_section"
+          - label: "Hero Subtitle"
+            name: "hero_subtitle"
+            widget: "string"
+            required: false
+            conditional:
+              - field: "sections.section_type"
+                value: "hero_section"
 
