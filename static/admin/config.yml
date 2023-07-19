@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
-  repo: wearebolean/hugo-decap-template
-  branch: main
+  name: "git-gateway"
+  repo: "wearebolean/hugo-decap-template"
+  branch: "main"
 
 media_folder: "static/images"
 public_folder: "images"
@@ -13,7 +13,7 @@ i18n:
     - "en"
 
 collections: 
-  - label: Carrieres
+  - label: "Carrieres"
     name: "carrieres"
     folder: "content/carrieres/list"
     create: true
@@ -29,7 +29,7 @@ collections:
       - label: "Affiché sur le site?"
         name: "type"
         widget: "select"
-        i18n: duplicate
+        i18n: "duplicate"
         options:
           - { label: "Oui", value: "visible" }
           - { label: "Non", value: "not_visible" }
@@ -37,16 +37,16 @@ collections:
         name: "sitemap"
         widget: "hidden"
         default: "true"
-        i18n: duplicate
+        i18n: "duplicate"
       - label: "Render as"
         name: "render_as"
         widget: "hidden"
         default: "cms-jobs"
-        i18n: duplicate
+        i18n: "duplicate"
       - label: "Content"
         name: "body"
         widget: "hidden"
-        i18n: duplicate
+        i18n: "duplicate"
         default: '{{< render-shared "carrieres/_introduction" >}}'
       - label: "Titre de l'emploi"
         name: "job_title"
@@ -55,7 +55,7 @@ collections:
       - label: "Emplacement"
         name: "area"
         widget: "string"
-        i18n: duplicate
+        i18n: "duplicate"
       - label: "Ton quotidien"
         name: "quotidien"
         widget: "list"
@@ -80,72 +80,6 @@ collections:
         fields: 
           - {label: "Ajouter", name: "line", widget: "string"}
         i18n: true
-  - name: "pages"
-    label: "Pages"
-    folder: "content/pages"
-    create: true
-    slug: "{{slug}}/index"
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Sections"
-        name: "sections"
-        widget: "list"
-        fields:
-          - label: "Section Type"
-            name: "section_type"
-            widget: "select"
-            options:
-              - { label: "Text Section", value: "text_section" }
-              - { label: "Image Section", value: "image_section" }
-              - { label: "Gallery Section", value: "gallery_section" }
-              - { label: "Hero Section", value: "hero_section" }
-          - label: "Section Content"
-            name: "section_content"
-            widget: "markdown"
-            required: false
-            media_folder: "static/content"
-            public_folder: "/content"
-          - label: "Image"
-            name: "image"
-            widget: "image"
-            required: false
-            media_folder: "static/images"
-            public_folder: "/images"
-          - label: "Gallery Images"
-            name: "gallery_images"
-            widget: "list"
-            fields:
-              - label: "Image"
-                name: "image"
-                widget: "image"
-                media_folder: "static/images"
-                public_folder: "/images"
-          - label: "Hero Image"
-            name: "hero_image"
-            widget: "image"
-            required: false
-            media_folder: "static/images"
-            public_folder: "/images"
-            default: ""
-            if:
-              field: "sections"
-              value: "hero_section"
-          - label: "Hero Title"
-            name: "hero_title"
-            widget: "string"
-            required: false
-            if:
-              field: "sections"
-              value: "hero_section"
-          - label: "Hero Subtitle"
-            name: "hero_subtitle"
-            widget: "string"
-            required: false
-            if:
-              field: "sections"
-              value: "hero_section"
   - name: "global"
     label: "Global"
     files:
