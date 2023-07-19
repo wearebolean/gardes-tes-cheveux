@@ -15,7 +15,7 @@ i18n:
 collections: 
   - label: "Carrieres"
     name: "carrieres"
-    folder: "content/carrieres/list888"
+    folder: "content/carrieres/list"
     create: true
     slug: "_{{slug}}/index"
     i18n: true
