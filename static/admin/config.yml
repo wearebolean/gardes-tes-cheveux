@@ -80,13 +80,13 @@ collections:
         fields: 
           - {label: "Ajouter", name: "line", widget: "string"}
         i18n: true
-  - name: "global"
-    label: "Global"
-    files:
-      - file: "config/_default/params.toml"
-        label: "Contact Parameters"
-        name: "params"
-        fields:
-          - { label: "Emails", name: "emails", widget: "list" }
-          - { label: "Phones", name: "phones", widget: "list" }
-          - { label: "Addresses", name: "addresses", widget: "list" }
+  # - name: "global"
+  #   label: "Global"
+  #   files:
+  #     - file: "config/_default/params.toml"
+  #       label: "Contact Parameters"
+  #       name: "params"
+  #       fields:
+  #         - { label: "Emails", name: "emails", widget: "list" }
+  #         - { label: "Phones", name: "phones", widget: "list" }
+  #         - { label: "Addresses", name: "addresses", widget: "list" }
