@@ -17,7 +17,7 @@ collections:
     name: "carrieres"
     folder: "content/carrieres/liste"
     create: true
-    slug: "{{slug}}/index"
+    slug: "_{{slug}}/index"
     i18n: true
     editor:
       preview: false
