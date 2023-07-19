@@ -146,4 +146,13 @@ collections:
             if:
               field: "sections"
               value: "hero_section"
-
+  - name: "global"
+    label: "Global"
+    files:
+      - file: "config/_default/params.toml"
+        label: "Contact Parameters"
+        name: "params"
+        fields:
+          - { label: "Emails", name: "emails", widget: "list" }
+          - { label: "Phones", name: "phones", widget: "list" }
+          - { label: "Addresses", name: "addresses", widget: "list" }
