@@ -80,13 +80,84 @@ collections:
         fields: 
           - {label: "Ajouter", name: "line", widget: "string"}
         i18n: true
-  # - name: "global"
-  #   label: "Global"
-  #   files:
-  #     - file: "config/_default/params.toml"
-  #       label: "Contact Parameters"
-  #       name: "params"
-  #       fields:
-  #         - { label: "Emails", name: "emails", widget: "list" }
-  #         - { label: "Phones", name: "phones", widget: "list" }
-  #         - { label: "Addresses", name: "addresses", widget: "list" }
+
+  - label: "Carrieres"
+    name: "carrieres"
+    folder: "content/carrieres/liste"
+    create: true
+    slug: "_{{slug}}/index"
+    i18n: true
+    editor:
+      preview: false
+    fields:
+      - label: "Title"
+        name: "title"
+        hint: "Le nom unique du dossier qui contiendra toutes les infos ci-bas. Ex: nom-separer-par-des-traits"
+        widget: "string"
+      - label: "Affiché sur le site?"
+        name: "type"
+        widget: "select"
+        i18n: "duplicate"
+        options:
+          - { label: "Oui", value: "visible" }
+          - { label: "Non", value: "not_visible" }
+      - label: "Sitemap"
+        name: "sitemap"
+        widget: "hidden"
+        default: "true"
+        i18n: "duplicate"
+      - label: "Render as"
+        name: "render_as"
+        widget: "hidden"
+        default: "cms-jobs"
+        i18n: "duplicate"
+      - label: "Content"
+        name: "body"
+        widget: "hidden"
+        i18n: "duplicate"
+        default: '{{< render-shared "carrieres/_introduction" >}}'
+      - label: "Titre de l'emploi"
+        name: "job_title"
+        widget: "string"
+        i18n: true
+      - label: "Emplacement"
+        name: "area"
+        widget: "string"
+        i18n: "duplicate"
+      - label: "Ton quotidien"
+        name: "quotidien"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "C’est l’emploi idéal pour toi si"
+        name: "ideal"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Ce que nous t’offrons"
+        name: "offrons"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Requis"
+        name: "requis"
+        widget: "list"
+        fields: 
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+
+  - name: "global"
+    label: "Global"
+    files:
+      - file: "config/_default/params.toml"
+        label: "Contact Parameters"
+        name: "params"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Phone link", name: "phone_link", widget: "string", hint: "Same as above but without spaces or special characters. Ex: 15143334444" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Google Map link", name: "gmap_link", widget: "string" }
