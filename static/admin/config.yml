@@ -1,7 +1,7 @@
 backend:
-  name: "git-gateway"
-  repo: "wearebolean/hugo-decap-template"
-  branch: "master"
+  name: git-gateway
+  repo: wearebolean/hugo-decap-template
+  branch: master
 
 media_folder: "static/images"
 public_folder: "images"
@@ -15,9 +15,9 @@ i18n:
 collections: 
   - label: "Carrieres"
     name: "carrieres"
-    folder: "/content/carrieres/liste"
+    folder: "content/carrieres/liste"
     create: true
-    slug: "/_{{slug}}/index"
+    slug: "_{{slug}}/index"
     i18n: true
     editor:
       preview: false
