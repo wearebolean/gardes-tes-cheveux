@@ -11,13 +11,6 @@ gtm = "TO-BE-EDITED"
 formspree_id = "..."
 formspree_email = "...@..."
 
-[params.contact]
-phone = "(...) ...-...."
-phone_link = ".........."
-email = "...@..."
-address = "..."
-gmap_link = "https://goo.gl/maps/..."
-
 [params.social_media]
 
 [params.social_media.facebook]
