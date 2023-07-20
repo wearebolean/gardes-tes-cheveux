@@ -1,3 +1,5 @@
-emails = ["test@test.com"]
-phones = ["1234567890"]
-addresses = ["123"]
+email = "test@test.com"
+phone = "1(514)333-4444"
+phone_link = "1514333444"
+address = "123 chemin bidon"
+gmap_link = "https://goo.gl/maps/..."
