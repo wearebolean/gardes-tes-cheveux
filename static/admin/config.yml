@@ -101,7 +101,7 @@ collections:
           - { label: "Google Map link", name: "gmap_link", widget: "string" }
       - file: "config/_default/params.toml"
         label: "Réseaux Sociaux"
-        name: "params"
+        name: "params_social"
         fields:
           - { label: "Facebook link", name: "facebook_link", widget: "string", required: false, hint: "Leave blank if none" }
   
