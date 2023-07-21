@@ -26,10 +26,10 @@
     </p>
 </address>
 
-<p>
-    {{ if ne .Site.Params.social_params.facebook_link "" }}
-        <a href="{{ .Site.Params.social_params.facebook_link }}" target="_blank">
-            <i class='fab fa-facebook-square'></i>
-        </a>
-    {{ end }}
-</p>
+{{ with .Site.Data.social_params }}
+  {{ if ne .facebook_link "" }}
+    <a href="{{ .facebook_link }}" target="_blank">
+      <i class='fab fa-facebook-square'></i>
+    </a>
+  {{ end }}
+{{ end }}
