@@ -21,6 +21,11 @@ collections:
     folder: "content/carrieres/list"
     create: true
     slug: "_{{slug}}/index"
+    nested:
+      depth: 100
+    path: "index"
+    media_folder: "uploads"
+    public_folder: "uploads"
     i18n: true
     editor:
       preview: false
@@ -36,6 +41,53 @@ collections:
         options:
           - { label: "Oui", value: "visible" }
           - { label: "Non", value: "false" }
+      - label: "Sitemap"
+        name: "sitemap"
+        widget: "hidden"
+        default: "true"
+        i18n: duplicate
+      - label: "Render as"
+        name: "render_as"
+        widget: "hidden"
+        default: "cms-jobs"
+        i18n: duplicate
+      - {label: "Content",
+        name: "body",
+        widget: "hidden",
+        i18n: duplicate,
+        default: '{{< render-shared "carrieres/_introduction" >}}'}
+      - label: "Job Title"
+        name: "job_title"
+        widget: "string"
+        i18n: true
+      - label: "Emplacement"
+        name: "area"
+        widget: "string"
+        i18n: duplicate
+      - label: "Ton quotidien"
+        name: "quotidien"
+        widget: "list"
+        fields:
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "C’est l’emploi idéal pour toi si"
+        name: "ideal"
+        widget: "list"
+        fields:
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Ce que nous t’offrons"
+        name: "offrons"
+        widget: "list"
+        fields:
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
+      - label: "Requis"
+        name: "requis"
+        widget: "list"
+        fields:
+          - {label: "Ajouter", name: "line", widget: "string"}
+        i18n: true
   - name: "global"
     label: "Global"
     files:
