@@ -20,10 +20,9 @@ collections:
     name: "carrieres"
     folder: "content/carrieres/list"
     create: true
-    slug: "_{{slug}}/index"
     nested:
       depth: 100
-    path: "index"
+    path: "_{{slug}}/index"
     media_folder: "uploads"
     public_folder: "uploads"
     i18n: true
