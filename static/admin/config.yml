@@ -5,6 +5,11 @@ backend:
 
 media_folder: "static/images"
 public_folder: "images"
+media_library:
+  name: uploadcare
+
+site_url: https://hugo-decap-template.netlify.app/
+logo_url: https://hugo-decap-template.netlify.app/images/logo.svg
 
 i18n:
   structure: "multiple_files"
