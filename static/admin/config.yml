@@ -91,7 +91,7 @@ collections:
     label: "Global"
     files:
       - file: "config/_default/params.toml"
-        label: "Contact Parameters"
+        label: "Contact Infos"
         name: "params"
         fields:
           - { label: "Email", name: "email", widget: "string" }
@@ -99,7 +99,7 @@ collections:
           - { label: "Phone link", name: "phone_link", widget: "string", hint: "Same as above but without spaces or special characters. Ex: 15143334444" }
           - { label: "Address", name: "address", widget: "string" }
           - { label: "Google Map link", name: "gmap_link", widget: "string" }
-      - file: "config/_default/params_social.toml"
+      - file: "config/_default/params.toml"
         label: "Réseaux Sociaux"
         name: "params_social"
         fields:
