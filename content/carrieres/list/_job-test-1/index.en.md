@@ -3,7 +3,7 @@ type: visible
 job_title: job-test-1
 area: job-test-1
 quotidien:
-  - line: job-test-1
+  - line: job-test-1-en
 ideal:
   - line: job-test-1
 offrons:
