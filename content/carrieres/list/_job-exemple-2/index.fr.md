@@ -1,6 +1,6 @@
 ---
 title: job-exemple-2
-type: visible
+type: "false"
 sitemap: "true"
 render_as: cms-jobs
 job_title: job-exemple-2
