@@ -51,11 +51,11 @@ collections:
         widget: "hidden"
         default: "cms-jobs"
         i18n: duplicate
-      - {label: "Content",
-        name: "body",
-        widget: "hidden",
-        i18n: duplicate,
-        default: '{{< render-shared "carrieres/_introduction" >}}'}
+      - label: "Content"
+        name: "body"
+        widget: "hidden"
+        i18n: duplicate
+        default: '{{< render-shared "carrieres/_introduction" >}}'
       - label: "Job Title"
         name: "job_title"
         widget: "string"
