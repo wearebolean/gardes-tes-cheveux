@@ -104,4 +104,8 @@ collections:
         name: "social_params"
         fields:
           - { label: "Facebook link", name: "facebook_link", widget: "string", required: false, hint: "Leave blank if none" }
+          - { label: "Instagram link", name: "instagram_link", widget: "string", required: false, hint: "Leave blank if none" }
+          - { label: "LinkedIn link", name: "linkedin_link", widget: "string", required: false, hint: "Leave blank if none" }
+          - { label: "Twitter link", name: "twitter_link", widget: "string", required: false, hint: "Leave blank if none" }
+          - { label: "Youtube link", name: "youtube_link", widget: "string", required: false, hint: "Leave blank if none" }
   

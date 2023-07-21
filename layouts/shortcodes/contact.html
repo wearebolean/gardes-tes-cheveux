@@ -18,18 +18,32 @@
         </a>
     </p>
     <p class='socials'>
-        {{ range .Site.Params.social_media }}
-            <a href="{{ .Url }}" target="_blank">
-                <i class='fab fa-{{ .Icon }}'></i>
+        {{ with .Site.Data.social_params }}
+          {{ if ne .facebook_link "" }}
+            <a href="{{ .facebook_link }}" target="_blank">
+              <i class='fab fa-facebook-square'></i>
             </a>
+          {{ end }}
+          {{ if ne .instagram_link "" }}
+            <a href="{{ .instagram_link }}" target="_blank">
+              <i class='fab fa-instagram'></i>
+            </a>
+          {{ end }}
+          {{ if ne .twitter_link "" }}
+            <a href="{{ .twitter_link }}" target="_blank">
+              <i class='fab fa-twitter'></i>
+            </a>
+          {{ end }}
+          {{ if ne .youtube_link "" }}
+            <a href="{{ .youtube_link }}" target="_blank">
+              <i class='fab fa-youtube'></i>
+            </a>
+          {{ end }}
+          {{ if ne .linkedin_link "" }}
+            <a href="{{ .linkedin_link }}" target="_blank">
+              <i class='fab fa-linkedin'></i>
+            </a>
+          {{ end }}
         {{ end }}
     </p>
 </address>
-
-{{ with .Site.Data.social_params }}
-  {{ if ne .facebook_link "" }}
-    <a href="{{ .facebook_link }}" target="_blank">
-      <i class='fab fa-facebook-square'></i>
-    </a>
-  {{ end }}
-{{ end }}
