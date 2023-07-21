@@ -11,33 +11,6 @@ gtm = "TO-BE-EDITED"
 formspree_id = "..."
 formspree_email = "...@..."
 
-[params.social_media]
-
-[params.social_media.facebook]
-weight = 1
-icon = "facebook-square"
-url = "https://www.facebook.com/..."
-
-[params.social_media.instagram]
-weight = 2
-icon = "instagram"
-url = "https://www.instagram.com/..."
-
-[params.social_media.twitter]
-weight = 3
-icon = "twitter"
-url = "https://twitter.com/..."
-
-[params.social_media.youtube]
-weight = 4
-icon = "youtube"
-url = "https://youtube.com/..."
-
-[params.social_media.linkedin]
-weight = 5
-icon = "linkedin"
-url = "https://linkedin.com/..."
-
 [languages]
 
 [languages.fr]

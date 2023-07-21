@@ -90,9 +90,9 @@ collections:
   - name: "global"
     label: "Global"
     files:
-      - file: "config/_default/params.toml"
+      - file: "data/contact_params.toml"
         label: "Contact Infos"
-        name: "params"
+        name: "contact_params"
         fields:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }

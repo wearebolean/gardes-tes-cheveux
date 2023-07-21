@@ -2,21 +2,24 @@
     <h2>
         {{ i18n "contact_info" }}
     </h2>
+    {{ with .Site.Data.social_params }}
     <p>
-        <a href="{{ .Site.Params.gmap_link }}" target="_blank">
-            {{ .Site.Params.address }}
+        <a href="{{ .gmap_link }}" target="_blank">
+            {{ .address }}
         </a>
     </p>
     <p>
-        <a href="mailto:{{ .Site.Params.email }}">
-            {{ .Site.Params.email }}
+        <a href="mailto:{{ .email }}">
+            {{ .email }}
         </a>
     </p>
     <p>
-        <a href="tel:{{ .Site.Params.phone_link }}">
-            {{ .Site.Params.phone }}
+        <a href="tel:{{ .phone_link }}">
+            {{ .phone }}
         </a>
     </p>
+    {{ end }}
+
     <p class='socials'>
         {{ with .Site.Data.social_params }}
           {{ if ne .facebook_link "" }}
