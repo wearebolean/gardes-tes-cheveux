@@ -7,6 +7,18 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','{{ .Site.Params.gtm }}');
         </script>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script>
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+            }
+          </script>
         <title>
             {{ if or .IsHome .Params.title_prefix }}
                 {{ if .Params.title_prefix}} {{ .Params.title_prefix}}&nbsp;{{ end }}{{ .Site.Title }} | {{ .Title }}
