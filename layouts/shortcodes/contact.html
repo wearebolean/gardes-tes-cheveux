@@ -25,3 +25,11 @@
         {{ end }}
     </p>
 </address>
+
+<p>
+    {{ if .Site.Params.facebook_link }}
+        <a href="{{ .Site.Params.facebook_link }}" target="_blank">
+            <i class='fab fa-facebook-square'></i>
+        </a>
+    {{ end }}
+</p>
