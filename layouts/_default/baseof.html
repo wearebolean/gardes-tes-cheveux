@@ -152,27 +152,51 @@
                 <header>
                     {{ i18n "contact_info" }}
                 </header>
-                <p>
-                    <a href="{{ .Site.Params.gmap_link }}" target="_blank">
-                        {{ .Site.Params.address }}
-                    </a>
-                </p>
-                <p>
-                    <a href="mailto:{{ .Site.Params.email }}">
-                        {{ .Site.Params.email }}
-                    </a>
-                </p>
-                <p>
-                    <a href="tel:{{ .Site.Params.phone_link }}">
-                        {{ .Site.Params.phone }}
-                    </a>
-                </p>
-                <p class='socials'>
-                    {{ range .Site.Params.social_media }}
-                        <a href="{{ .Url }}" target="_blank">
-                            <i class='fab fa-{{ .Icon }}'></i>
+                {{ with .Site.Data.contact_params }}
+                    <p>
+                        <a href="{{ .gmap_link }}" target="_blank">
+                            {{ .address }}
                         </a>
-                    {{ end }}
+                    </p>
+                    <p>
+                        <a href="mailto:{{ .email }}">
+                            {{ .email }}
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:{{ .phone_link }}">
+                            {{ .phone }}
+                        </a>
+                    </p>
+                {{ end }}
+                <p class='socials'>
+                    {{ with .Site.Data.social_params }}
+                  {{ if ne .facebook_link "" }}
+                    <a href="{{ .facebook_link }}" target="_blank">
+                      <i class='fab fa-facebook-square'></i>
+                    </a>
+                  {{ end }}
+                  {{ if ne .instagram_link "" }}
+                    <a href="{{ .instagram_link }}" target="_blank">
+                      <i class='fab fa-instagram'></i>
+                    </a>
+                  {{ end }}
+                  {{ if ne .twitter_link "" }}
+                    <a href="{{ .twitter_link }}" target="_blank">
+                      <i class='fab fa-twitter'></i>
+                    </a>
+                  {{ end }}
+                  {{ if ne .youtube_link "" }}
+                    <a href="{{ .youtube_link }}" target="_blank">
+                      <i class='fab fa-youtube'></i>
+                    </a>
+                  {{ end }}
+                  {{ if ne .linkedin_link "" }}
+                    <a href="{{ .linkedin_link }}" target="_blank">
+                      <i class='fab fa-linkedin'></i>
+                    </a>
+                  {{ end }}
+                {{ end }}
                 </p>
             </address>
         </footer>
