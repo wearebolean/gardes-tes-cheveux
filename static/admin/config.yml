@@ -98,7 +98,7 @@ collections:
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Phone link", name: "phone_link", widget: "string", pattern: ['^[0-9]*$', "Non valide"], hint: "Same as above but without spaces or special characters. Ex: 15143334444" }
           - { label: "Address", name: "address", widget: "string" }
-          - { label: "Google Map link", name: "gmap_link", widget: "string" }
+          - { label: "Google Map link", name: "gmap_link", pattern: ['^https://goo.gl/maps/', "Doit débuter par : https://goo.gl/maps/"], widget: "string" }
       - file: "data/social_params.toml"
         label: "Réseaux Sociaux"
         name: "social_params"
