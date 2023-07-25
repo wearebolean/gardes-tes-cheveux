@@ -105,8 +105,8 @@ collections:
         name: "social_params"
         fields:
           - { label: "Facebook link", name: "facebook_link", widget: "string", required: false, pattern: ['^https://facebook.com/', "Doit débuter par : https://facebook.com/"], hint: "Leave blank if none" }
-          - { label: "Instagram link", name: "instagram_link", widget: "string", required: false, pattern: ['^https://www.instagram.com/', "Doit débuter par : https://www.instagram.com/"] hint: "Leave blank if none" }
-          - { label: "LinkedIn link", name: "linkedin_link", widget: "string", required: false, pattern: ['^https://www.linkedin.com/', "Doit débuter par : https://www.linkedin.com/"] hint: "Leave blank if none" }
-          - { label: "Twitter link", name: "twitter_link", widget: "string", required: false, pattern: ['^https://twitter.com/', "Doit débuter par : https://twitter.com/"] hint: "Leave blank if none" }
-          - { label: "Youtube link", name: "youtube_link", widget: "string", required: false, pattern: ['^https://www.youtube.com/', "Doit débuter par : https://www.youtube.com/"] hint: "Leave blank if none" }
+          - { label: "Instagram link", name: "instagram_link", widget: "string", required: false, pattern: ['^https://www.instagram.com/', "Doit débuter par : https://www.instagram.com/"], hint: "Leave blank if none" }
+          - { label: "LinkedIn link", name: "linkedin_link", widget: "string", required: false, pattern: ['^https://www.linkedin.com/', "Doit débuter par : https://www.linkedin.com/"], hint: "Leave blank if none" }
+          - { label: "Twitter link", name: "twitter_link", widget: "string", required: false, pattern: ['^https://twitter.com/', "Doit débuter par : https://twitter.com/"], hint: "Leave blank if none" }
+          - { label: "Youtube link", name: "youtube_link", widget: "string", required: false, pattern: ['^https://www.youtube.com/', "Doit débuter par : https://www.youtube.com/"], hint: "Leave blank if none" }
   
