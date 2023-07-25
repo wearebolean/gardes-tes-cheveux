@@ -33,6 +33,7 @@ collections:
         name: "title"
         hint: "Le nom unique du dossier qui contiendra toutes les infos ci-bas. Ex: nom-separer-par-des-traits"
         widget: "string"
+        pattern: [^[^\s^\x00-\x1f\\?*:"";<>|\/.][^\x00-\x1f\\?*:"";<>|\/]*[^\s^\x00-\x1f\\?*:"";<>|\/.]+$, "Non valide"]
       - label: "Affiché sur le site?"
         name: "type"
         widget: "select"
@@ -94,7 +95,7 @@ collections:
         label: "Contact Infos"
         name: "contact_params"
         fields:
-          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Email", name: "email", widget: "string", pattern: (?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\]) }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Phone link", name: "phone_link", widget: "string", pattern: ['^[0-9]*$', "Non valide"], hint: "Same as above but without spaces or special characters. Ex: 15143334444" }
           - { label: "Address", name: "address", widget: "string" }
@@ -103,9 +104,9 @@ collections:
         label: "Réseaux Sociaux"
         name: "social_params"
         fields:
-          - { label: "Facebook link", name: "facebook_link", widget: "string", required: false, hint: "Leave blank if none" }
-          - { label: "Instagram link", name: "instagram_link", widget: "string", required: false, hint: "Leave blank if none" }
-          - { label: "LinkedIn link", name: "linkedin_link", widget: "string", required: false, hint: "Leave blank if none" }
-          - { label: "Twitter link", name: "twitter_link", widget: "string", required: false, hint: "Leave blank if none" }
-          - { label: "Youtube link", name: "youtube_link", widget: "string", required: false, hint: "Leave blank if none" }
+          - { label: "Facebook link", name: "facebook_link", widget: "string", required: false, pattern: ['^https://facebook.com/', "Doit débuter par : https://facebook.com/"], hint: "Leave blank if none" }
+          - { label: "Instagram link", name: "instagram_link", widget: "string", required: false, pattern: ['^https://www.instagram.com/', "Doit débuter par : https://www.instagram.com/"] hint: "Leave blank if none" }
+          - { label: "LinkedIn link", name: "linkedin_link", widget: "string", required: false, pattern: ['^https://www.linkedin.com/', "Doit débuter par : https://www.linkedin.com/"] hint: "Leave blank if none" }
+          - { label: "Twitter link", name: "twitter_link", widget: "string", required: false, pattern: ['^https://twitter.com/', "Doit débuter par : https://twitter.com/"] hint: "Leave blank if none" }
+          - { label: "Youtube link", name: "youtube_link", widget: "string", required: false, pattern: ['^https://www.youtube.com/', "Doit débuter par : https://www.youtube.com/"] hint: "Leave blank if none" }
   
