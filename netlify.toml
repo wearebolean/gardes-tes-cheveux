@@ -9,3 +9,8 @@
   command = "hugo"
   publish = "public"
   branch = "main"
+
+[context.dev]
+  command = "hugo"
+  publish = "public"
+  branch = "dev"
