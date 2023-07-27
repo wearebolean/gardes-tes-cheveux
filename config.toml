@@ -14,7 +14,7 @@ formspree_email = "...@..."
 [languages]
 
 [languages.fr]
-title = "Titre_du_Site"
+title = "Gardes tes cheveux"
 languageName = "Français"
 LanguageCode = "fr"
 
@@ -75,7 +75,7 @@ weight = 5
 identifier = "link5"
 
 [languages.en]
-title = "Website_Title"
+title = "Gardes tes cheveux"
 languageName = "English"
 LanguageCode = "en"
 
