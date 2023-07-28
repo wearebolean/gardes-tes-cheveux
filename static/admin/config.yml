@@ -1,13 +1,13 @@
 backend:
   name: git-gateway
-  repo: wearebolean/hugo-decap-template
+  repo: wearebolean/gardes-tes-cheveux
   branch: main
 
 media_folder: "static/images"
 public_folder: "images"
 
-site_url: https://hugo-decap-template.netlify.app/
-logo_url: https://hugo-decap-template.netlify.app/images/logo.svg
+site_url: https://gardes-tes-cheveux.netlify.app/
+logo_url: https://gardes-tes-cheveux.netlify.app/images/logo.svg
 
 i18n:
   structure: "multiple_files"
